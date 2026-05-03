@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAPTCHA Bypasser</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="#4F46E5"/>
+          <path d="M8 16L13 21L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="title-section">
+        <h1>CAPTCHA Bypasser</h1>
+        <span class="version">v1.0.0</span>
+      </div>
+    </div>
+
+    <div class="status-bar" id="statusBar">
+      <div class="status-dot" id="statusDot"></div>
+      <span id="statusText">Ready</span>
+    </div>
+
+    <div class="controls">
+      <div class="toggle-group">
+        <label class="toggle-label">
+          <span>Auto-Solve</span>
+          <div class="toggle">
+            <input type="checkbox" id="autoSolve" checked>
+            <span class="slider"></span>
+          </div>
+        </label>
+        <p class="description">Automatically detect and solve CAPTCHAs on page load</p>
+      </div>
+
+      <div class="toggle-group">
+        <label class="toggle-label">
+          <span>Audio Mode</span>
+          <div class="toggle">
+            <input type="checkbox" id="audioMode" checked>
+            <span class="slider"></span>
+          </div>
+        </label>
+        <p class="description">Prefer audio challenges for faster solving</p>
+      </div>
+
+      <div class="toggle-group">
+        <label class="toggle-label">
+          <span>Human Simulation</span>
+          <div class="toggle">
+            <input type="checkbox" id="humanSim" checked>
+            <span class="slider"></span>
+          </div>
+        </label>
+        <p class="description">Add random delays and mouse movements to appear human</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="solveNow">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M2 8L6 12L14 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Solve Now
+      </button>
+      <button class="btn btn-secondary" id="resetBtn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M14 8A6 6 0 1 1 8 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M14 2V6H10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Reset
+      </button>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-value" id="solvedCount">0</span>
+        <span class="stat-label">Solved</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value" id="failedCount">0</span>
+        <span class="stat-label">Failed</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value" id="successRate">0%</span>
+        <span class="stat-label">Success</span>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Supports reCAPTCHA v2, v3 & hCaptcha</p>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
